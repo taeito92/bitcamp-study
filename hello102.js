@@ -1,3 +1,4 @@
+
 console.log("Hello, world2!"); 
 console.log("B 개발자");
 console.log(" A 개발자!");
@@ -9,4 +10,6 @@ console.log(" g 개발자!");
 console.log(" h 개발자!");
 console.log(" i 개발자!");
 console.log(" j 개발자!");
+console.log("Hello, world~~"); 
+console.log("Nonted"); 
 
