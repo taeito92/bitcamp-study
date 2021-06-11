@@ -26,7 +26,8 @@ public class Exam0700 {
     System.out.println("Hello,'w'orld!"); //"" 안에서 ' 문자는 그냥 적는다.
     System.out.println('\''); // ' 문자를 출력시키는 문자
     System.out.println('"'); // '' 안에서 " 문자는 그냥 적는다.
-    System.out.println("c:\\Users\\user\\git"); // \ 문자를 출력시키는 문자
+    System.out.println("c:\\Users\\user\\git"); // \ 문자를 출력시키는 문자 
+    // 역슬래시 1개만 했을때 역슬래시 다음에 문자가 오면 그것을 명령어로 인식 그래서 2개 넣는다.
   }
 }
 
