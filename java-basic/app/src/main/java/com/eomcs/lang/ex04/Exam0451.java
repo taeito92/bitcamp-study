@@ -21,5 +21,8 @@ public class Exam0451 {
     // "레퍼런스 (변수)"라 부른다.
     // 자바 기본 데이터 타입(byte, short, int, long, float, double, boolean, char)을
     // 제외한 모든 타입의 변수는 레퍼런스이다.
+
+    //        int[] arr = new int[3] ;
+    //       레퍼런스      인스턴스
   }
 }

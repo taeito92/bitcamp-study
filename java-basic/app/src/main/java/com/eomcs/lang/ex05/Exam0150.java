@@ -14,7 +14,7 @@ public class Exam0150 {
     char c = 7;
 
     // byte + byte = int
-    // => 연산을 하기 전에 byte 값이 int로 암시적 형변환 된다.
+    // => 연산을 하기 전에 byte 값이 int로 암시적 형변환 된다.(int로 바뀌는 것이 아니라 int 임시 메모리가 만들어지고 그 곳에 값을 넣는다)
     //byte r1 = b + b; // 컴파일 오류!
 
     // short + short = int
@@ -35,7 +35,7 @@ public class Exam0150 {
 
     // int + long = long
     // => int가 long으로 암시적 형변환 한 이후에 연산을 수행한다.
-    //int r6 = i + l; // 컴파일 오류!
+    //int r6 = i + l; // 컴파일 오류! (int가 long으로 형변환 하지만 오류가 나는 이유는 결과값 long을 int에 넣어야 하기때문)
 
     // long + float = float
     // => long이 float으로 암시적 형변환 한 후에 연산을 수행한다.

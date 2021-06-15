@@ -14,7 +14,7 @@ public class Test03 {
     int v71, v72, v73, v74, v75, v76, v77, v78, v79 ,v80
     
     int[] arr = new int[60];  // int arr[] = int [] = arr 똑같다
-    
+
 
     v1 = 101;
     v2 = 102;
@@ -23,6 +23,7 @@ public class Test03 {
     v5 = 105;
     v6 = 106;
     v7 = 107;
+    
 
     
 

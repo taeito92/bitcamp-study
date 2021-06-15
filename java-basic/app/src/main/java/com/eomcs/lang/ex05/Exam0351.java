@@ -50,6 +50,29 @@ public class Exam0351 {
 
     System.out.println(57 % 16);
     System.out.println(57 & 0b1111);
+    System.out.println(58 % 16);
+    System.out.println(58 & 0b1111);
+    System.out.println(59 % 16);
+    System.out.println(59 & 0b1111);
+    System.out.println(60 % 16);
+    System.out.println(60 & 0b1111);
+    System.out.println(61 % 16);     //ob10000 
+    System.out.println(61 & 0b1111);
+    System.out.println("-------------");
+    System.out.println(61 % 21);    // 2의 제곱수가 아님
+    System.out.println(61 & 0b10100); 
+    System.out.println(61 % 20);
+    System.out.println(61 & 0b10011);
+    System.out.println("-------------");
+    System.out.println(80 % 32);     // 0b1000000
+    System.out.println(80 & 0b11111);// 1 2 4 8 16 
+    
+
+
+    
+
+
+    
 
   }
 }

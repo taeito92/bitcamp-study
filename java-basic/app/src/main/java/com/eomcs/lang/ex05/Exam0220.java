@@ -61,5 +61,6 @@ public class Exam0220 {
     // => 다음과 같이 개발자가 직접 처리해야 한다.
     double EPSILON = 0.00001;
     System.out.println(Math.abs((d1 + d2) - (x + y)) < EPSILON);
+    //abs는 절대값(음수나 양수 상관없이 값을 가져온다.)
   }
 }

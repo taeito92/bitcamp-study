@@ -25,8 +25,16 @@ public class Exam0510 {
     int[] arr1 = new int[5]; // OK!
     int arr2[] = new int[5]; // OK! C-style.
 
-    // 배열의 크기는 int 타입의 최대 값이다.
-    int[] arr3 = new int[2147483647];
+    // 배열의 크기는 int 타입의 최대 값에서 2를 뺀 값이다.
+    // 배열의 최대 크기 = Integer.MAX_VALUE - 2
+    //int[] arr3 = new int[2147483647]; //실행오류
+    int[] arr3 = new int[2147483645]; // OK
+    int[] arr4 = new int[Integer.MAX_VALUE - 2];
+
+    // 단 자바 힙 메모리가 부족하다는 실행 오류가 발생할 수 있다.
+    // JException in thread "main" java.lang.OutOfMemoryError: Java heap space at com.eomcs.lang.ex04.Exam0510.main(Exam0510.java:29)
+    // 해결책 : 자바 힙 메모리를 늘려라.
+
   }
 }
 
