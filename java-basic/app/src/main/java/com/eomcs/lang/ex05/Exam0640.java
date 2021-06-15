@@ -19,5 +19,19 @@ public class Exam0640 {
     // int result = 14;
     System.out.printf("%d, %d\n", i, result);
 
+
+
+
+    /* int temp1 = i;  2
+       i = i + 1;  3
+       int temp2 = i;  3
+       i = i + 1;  4
+       int temp3 = i;  4 
+       i = i + 1;  5
+
+       int result = temp1 + temp2 * temp3;
+    */
+
+
   }
 }

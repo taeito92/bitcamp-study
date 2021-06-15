@@ -30,7 +30,7 @@ public class Exam0470 {
     //     01000000 (CPP 여부를 조사하는 값)
     // => 결과 값과 조사한 값이 같지 않으면 해당 비트가 0이라는 의미다.
 
-    System.out.printf("CSS        : %b\n", (lang & CSS) == CSS);
+    System.out.printf("CSS        : %b\n", (lang & CSS) == CSS); //%b는 ,뒤에 값을 넣는다(2진수로), \n은 줄바꿈
     System.out.printf("HTML       : %b\n", (lang & HTML) == HTML);
     System.out.printf("PHP        : %b\n", (lang & PHP) == PHP);
     System.out.printf("Python     : %b\n", (lang & PYTHON) == PYTHON);

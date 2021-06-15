@@ -20,6 +20,7 @@ public class Exam0510 {
     // 그래서 컴파일 오류이다.
 
     String message = (age > 18) ? "성년" : "미성년";
+    // = > String message = "성년"    20살이니깐
     System.out.printf("나이 %d는(은) %s이다.\n", age, message);
   }
 }
