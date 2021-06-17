@@ -20,7 +20,7 @@ public class Exam0222 {
         System.out.println("정보처리자격증");
         // no의 값이 case에 해당되는 경우
         // break 명령을 만날 때까지 아래로 계속 실행한다.
-      case 2:
+      case 2: // no 값이 2면 여기서부터 시작.
         System.out.println("졸업증명서");
       case 3:
         System.out.println("이력서");

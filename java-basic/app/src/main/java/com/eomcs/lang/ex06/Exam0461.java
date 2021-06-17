@@ -14,7 +14,7 @@ public class Exam0461 {
 
     // for 문에 컬렉션도 적용할 수 있다.
     // for (변수 선언 : 컬렉션객체) 문장;
-    for (Object value : list)
+    for (Object value : list)                           // 오브젝트 - 모든 값을 받을 수 있는 것
       System.out.println(value);
   }
 }
