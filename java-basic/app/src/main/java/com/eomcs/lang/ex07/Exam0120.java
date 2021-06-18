@@ -11,7 +11,11 @@ public class Exam0120 {
   // 그리고 그 블록에 대해 이름을 붙인다.
   // => 이렇게 정의한 블록을 "메서드(method)" 또는
   //    "함수(function)"이라 부른다.
-  // => 자바는 "메서드" 이름을 주로 사용한다.
+  // => 자바는 "메서드"라는 이름으로 부른다.
+  // 메서드 이름은 명령 형태의 동사구로 짓는다.
+  // getName(), setName(), printName(), doFilter(), parseInt() 등
+  // 물론 명사구나 전치사구 형태로 짓는 경우도 있다.
+  // 예) valueOf(), toString()  등
   public static void printSpaces(int len) {
     for (int i = 0; i < len; i++) {
       System.out.print(" ");
@@ -32,6 +36,8 @@ public class Exam0120 {
     Scanner keyScan = new Scanner(System.in);
     System.out.print("밑변의 길이? ");
     int len = keyScan.nextInt();
+    keyScan.close();
+
 
     for (int starLen = 1; starLen <= len; starLen += 2) {
       // 명령 코드들을 기능 별로 묶어 놓고
@@ -41,6 +47,5 @@ public class Exam0120 {
       printStars(starLen);
       System.out.println();
     }
-    keyScan.close();
   }
 }

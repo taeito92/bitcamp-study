@@ -24,7 +24,7 @@ public class Exam0330 {
     // MyObject 설계도에 따라 int a와 int b 메모리를 만든다.
     // 그리고 그 메모리(인스턴스=객체)의 주소를 ref 변수에 저장한다.
     MyObject ref = new MyObject();
-    ref.a = 100;
+    ref.a = 100;    //레퍼런스에 저장된 주소에 찾아가서 a라는 변수에 100을 넣는다.
     ref.b = 200;
 
     // a, b 변수가 들어 있는 인스턴스(객체=메모리)의 주소를 
