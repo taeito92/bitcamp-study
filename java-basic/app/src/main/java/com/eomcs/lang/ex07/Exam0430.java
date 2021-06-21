@@ -4,13 +4,16 @@ package com.eomcs.lang.ex07;
 //
 public class Exam0430 {
 
+  // heap 메모리에 어떤 변수를 만들어야 하는지 적어 놓은 설계도
   static class MyObject {
     int a;
     int b;
   }
-  
+
+  // heap에 만들어지는 모든 변수는 0으로 초기화.
+  // ==> 처음에 heap 안에 a,b에는 0이 들어가 있다.
+
   static MyObject getMyObject() {
-    // Exam03_3.java 에 정의된 MyObject 클래스 사용
     MyObject ref = new MyObject();
     ref.a = 100;
     ref.b = 200;

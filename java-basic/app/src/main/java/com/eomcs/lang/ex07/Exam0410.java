@@ -12,7 +12,7 @@ public class Exam0410 {
   }
 
   public static void main(String[] args) {
-    int a = 100;
+    int a = 100; 
     int b = 200;
     swap(a, b);
     System.out.printf("main(): a=%d, b=%d\n", a, b);
@@ -37,7 +37,7 @@ public class Exam0410 {
 // - 크게 다음 세가지 영역으로 나눠 관리한다.
 //
 // 1) Method Area
-// - 클래스 명령 코드를 둔다.
+// - 클래스 명령 코드를 둔다.(실제 메소드 에리어에는 소스가 아니라 바이트 코드(class파일의 내용)가 올라간다.)
 // - static 변수를 둔다.
 //
 // 2) Heap
