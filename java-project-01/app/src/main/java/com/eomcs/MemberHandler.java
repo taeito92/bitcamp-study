@@ -13,13 +13,31 @@ public class MemberHandler implements Handler {
     Date registeredDate;
   }
 
-  static Scanner keyScan;
+  String memberGroupName;
+  Scanner keyScan;
+  ArrayList memberList = new ArrayList();
+
+
+  // 생성자를 2개 만들면 둘중에 원하는 것으로 선택해서 사용가능
+  // 예를들어 app에서 MemberHandler memberHandler = new MemberHandler(keyScan);
+  // or MemberHandler memberHandler = new MemberHandler("관리자", keyScan);
+  MemberHandler(Scanner keyScan) {
+    this.keyScan = keyScan;
+    this.memberGroupName = "일반";
+  }
+
+  MemberHandler(String memberGroupName, Scanner keyScan) {
+    this.memberGroupName = memberGroupName;
+    this.keyScan = keyScan;
+  }
 
   public void execute() {
     System.out.println("[회원 관리]");
 
     loop: while(true) {
-      System.out.print("회원 관리> ");
+      //인스턴스 메서드에서 인스턴스 변수를 사용할 때
+      //this를 생략할 수 있다.
+      System.out.print(/*this.*/memberGroupName+"/회원 관리> ");
       String command = keyScan.nextLine();
 
       switch (command) {
@@ -37,10 +55,10 @@ public class MemberHandler implements Handler {
     }
   }
 
-  static void add() {
+  void add() {
     System.out.println("[회원 등록]");
 
-    if(ArrayList2.size == ArrayList2.MAX_LENGTH) {
+    if(memberList.size == ArrayList.MAX_LENGTH) {
       System.out.println("더이상 게시글을 추가할 수 없습니다.");
       return;
     }
@@ -65,17 +83,17 @@ public class MemberHandler implements Handler {
 
     member.registeredDate = new Date();
 
-    ArrayList2.append(member);
+    memberList.append(member);
 
     System.out.println("회원을 등록했습니다.");
 
 
   }
 
-  static void list() {
+  void list() {
     System.out.println("[회원 목록]");
 
-    Object[] arr = ArrayList2.toArray();
+    Object[] arr = memberList.toArray();
 
     for (int i = 0; i < arr.length; i++) {
       Member member = (Member) arr[i];
@@ -87,34 +105,35 @@ public class MemberHandler implements Handler {
     }
   }
 
-  static void view() {
+  void view() {
     System.out.println("[회원 조회]");
     System.out.print("번호? ");
     int index = Integer.parseInt(keyScan.nextLine());
-    if(index > 0 && index >= ArrayList2.size) {
+    if(index > 0 && index >= memberList.size) {
       System.out.println("무효한 회원 번호입니다.");
       return;
     }
-    Member member = (Member) ArrayList2.retrieve(index);
-
+    Member member = (Member) memberList.retrieve(index);
     System.out.printf("이름: %s\n", member.name);
     System.out.printf("이메일: %s\n", member.email);
     System.out.printf("등록일: %1$tY-%1$tm-%1$td\n", member.registeredDate);
     System.out.printf("재직중: %s\n", member.working ? "예" : "아니오");
   }
 
-  static void update() {
+  void update() {
     System.out.println("[회원 변경]");
 
     System.out.print("번호? ");
     int index = Integer.parseInt(keyScan.nextLine());
 
-    if(index > 0 && index >= ArrayList2.size) {
+    if(index > 0 && index >= memberList.size) {
       System.out.println("무효한 회원 번호입니다.");
       return;
     }
 
-    Member member = (Member) ArrayList2.retrieve(index);
+    Member member = (Member) memberList.retrieve(index);
+
+    //멤버리스트에 가면 배열이 있고 그 곳에 인덱스 번째의 배열에 뭐가 있는지 가져오세요.
 
     System.out.printf("이름(%s)? ", member.name);
     String name = keyScan.nextLine();
@@ -147,13 +166,13 @@ public class MemberHandler implements Handler {
 
   }
 
-  static void delete() {
+  void delete() {
     System.out.println("[회원 삭제]");
 
     System.out.print("번호? ");
     int index = Integer.parseInt(keyScan.nextLine());
 
-    if(index > 0 && index >= ArrayList2.size) {
+    if(index > 0 && index >= memberList.size) {
       System.out.println("무효한 회원 번호입니다");
       return; 
     }
@@ -165,7 +184,7 @@ public class MemberHandler implements Handler {
       return;
     } 
 
-    ArrayList2.remove(index);
+    memberList.remove(index);
 
     System.out.println("회원을 삭제하였습니다.");
   }
