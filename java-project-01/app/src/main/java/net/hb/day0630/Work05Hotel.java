@@ -11,6 +11,7 @@ public class Work05Hotel {
   private int room; // 호 = 열 5호   3행 * 5열 = 15개의 방 구성
   private String[][] name = new String[3][5];
 
+
   private String guest;
   Scanner sc = new Scanner(System.in);
 
@@ -42,20 +43,35 @@ public class Work05Hotel {
         case 3:
           map();
           break;
+        case 4:
+          list();
+          break;
+        default:
+          System.out.println("잘못된 번호를 입력하셨습니다.");
       }
     }
   }
 
   public void checkIn() {
-    System.out.println("몇층에 투숙>> ");
-    floor = sc.nextInt();
-    System.out.println("몇호에 투숙>> ");
-    room = sc.nextInt();
-    sc.nextLine();
-    System.out.println("이름을 입력하세요>> ");
-    guest = sc.nextLine();
-    name[floor-1][room-1] = guest;
-    System.out.println(guest+"님"+floor+"0"+room+"호에 예약되었습니다");
+    while(floor>3 || floor == 0 || room>5 || room == 0) {
+      System.out.println("몇층에 투숙>> ");
+      floor = sc.nextInt();
+      System.out.println("몇호에 투숙>> ");
+      room = sc.nextInt();
+      if(floor <= 3 && floor != 0 && room<=5 && room != 0) {
+        sc.nextLine();
+        System.out.println("이름을 입력하세요>> ");
+        guest = sc.nextLine();
+        name[floor-1][room-1] = guest;
+        System.out.println(guest+"님"+floor+"0"+room+"호에 예약되었습니다");
+      }else {
+        System.out.println("다시해");
+
+      }
+
+    }
+
+
   }
 
   public void checkOut() {
@@ -64,12 +80,11 @@ public class Work05Hotel {
     String id = sc.nextLine();
     for(int i=0; i<3; i++) {
       for(int a=0; a<5; a++) {
-        if(this.name[i][a].equals(id)) {
-          this.name[i][a] = null;
+        if(name[i][a].equals(id)) {
+          name[i][a] = null;
           System.out.println("퇴실완료");
-          break;
-        } 
 
+        }
       }
     }
   }
@@ -98,8 +113,18 @@ public class Work05Hotel {
     }
   }
 
-  public void list() { // 
-
+  public void list() { 
+    System.out.println("\n\t [ list ]");
+    for(int i=0; i<3; i++) {
+      for(int a=0; a<5; a++) {
+        if(name[i][a] == null) {
+          System.out.print(" " + (i+1)+"0"+(a+1)+"호"+"□\t");
+        }else {
+          System.out.print(" " + (i+1)+"0"+(a+1)+"호"+"■\t" );
+        }
+      }
+      System.out.println();
+    }
   }
 
   public static void main(String[] args) { 

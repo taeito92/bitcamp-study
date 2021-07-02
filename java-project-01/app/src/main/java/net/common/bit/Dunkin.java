@@ -1,6 +1,7 @@
 package net.common.bit;
 
 public class Dunkin {
+  public Dunkin() { }
   public String coffee(){ 
     //Non-static메소드, 리턴값
     //객체화생성후 객체명.coffee();

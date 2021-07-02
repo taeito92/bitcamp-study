@@ -29,10 +29,17 @@ public class Memo extends Frame implements WindowListener ,ActionListener{
 
 
     // 이벤트 연결 리스너 추가
-    this.addWindowListener(this);
+    // 오른쪽 this는 addwindowlistener()의 괄호 안에 필요한 아규먼트 값이 windowlistener이고 
+    // memo는 windowlistener를 상속받기 때문에 상속 받은 memo를 가르키는 this 사용 가능
+    // 혹은 memo mm = new memo(); or windowlistener wl = new windowlistener();
+
+    // WindowListener wl = new WindowListener();
+    // addWindowListener(wl); 에러(인터페스이기에 상속을 이용해서 해야함)
+    this.addWindowListener(this); 
     tf.addActionListener(this);
     btnSend.addActionListener(this);
     btnExit.addActionListener(this);
+
 
     ta.setBackground(Color.YELLOW);
     this.setSize(400, 500);
@@ -90,6 +97,9 @@ public class Memo extends Frame implements WindowListener ,ActionListener{
   public static void main(String[] args) {
 
     Memo pad = new Memo();
+    AAA aa = null; // 선언만
+    // AAA ac = new AAA(); 에러발생
+    // WindowListener wl = new WindowListener(); 인터페이스라서 안된다.(스태틱 논스태틱 둘 다 안됨)
 
   }
 }
